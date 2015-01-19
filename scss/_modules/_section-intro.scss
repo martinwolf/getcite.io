@@ -2,7 +2,17 @@
  * Intro Section
  */
 
+.logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -420px;
+}
+
 .section__headline--intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     color: #F8C90E;
 }
 
