@@ -1,0 +1,18 @@
+/**
+ * Intro Section
+ */
+
+.section__headline--intro {
+    color: #F8C90E;
+}
+
+.section__headline--intro > span {
+    color: #CD6CC3;
+}
+
+.intro__img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

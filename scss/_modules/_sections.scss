@@ -1,0 +1,36 @@
+/**
+ * Sections
+ */
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.section--intro {
+    padding-top: 30px;
+    background-color: $purple;
+}
+
+.section--preview {
+    padding-top: 100px;
+    padding-bottom: 110px;
+    background-color: $beige;
+}
+
+.section--outro {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color: $red;
+}
+
+.section__headline {
+    //margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+}
