@@ -34,7 +34,8 @@ gulp.task('js', function() {
         .pipe(jshint.reporter('default'))
         .pipe(addsrc('./js/_libs/*.js'))
         .pipe(order([
-                'js/_libs/jquery-2.1.1.js',
+                'js/_libs/jquery-2.1.3.js',
+                'js/_libs/jquery.bxslider.js',
                 'js/scripts.js'
             ], { base: './' }))
         .pipe(concat('scripts.min.js'))

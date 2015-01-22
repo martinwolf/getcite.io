@@ -44,3 +44,8 @@
         clear: both;
     }
 }
+
+%text-hidden {
+    text-indent: -10000px;
+    overflow: hidden;
+}

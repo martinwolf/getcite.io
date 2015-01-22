@@ -11,7 +11,7 @@
     <script>
         document.createElement( "picture" );
     </script>
-    <script src="dist/js/picturefill.js" async></script>
+    <script src="dist/js/picturefill.min.js" async></script>
 
     <link rel="stylesheet" href="dist/css/style.min.css">
 </head>
@@ -27,7 +27,8 @@
 
         <img
             class="intro__img"
-            srcset="dist/img/iphone.png"
+            srcset="dist/img/iphone.png 349w, dist/img/iphone@2x.png 698w"
+            width="349" height="357"
             alt="iPhone with cite">
     </div>
 
@@ -36,6 +37,25 @@
             Make the best of<br>
             <span>140 Characters</span>
         </h2>
+
+        <div class="wrap slider">
+            <ul class="js_slider">
+                <li>
+                    <img
+                        class="slider__img"
+                        srcset="dist/img/tweet-01.png 429w, dist/img/tweet-01@2x.png 858w"
+                        width="429" height="343"
+                        alt="Tweet with cite image attached">
+                </li>
+                <li>
+                    <img
+                        class="slider__img"
+                        srcset="dist/img/tweet-01.png 429w, dist/img/tweet-01@2x.png 858w"
+                        width="429" height="343"
+                        alt="Tweet with cite image attached">
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="section section--outro">
@@ -44,8 +64,10 @@
             <span>worth to read</span>
         </h2>
 
-        <p>Website by <a href="http://martinwolf.org">Martin Wolf</a></p>
+        <p class="outro-information">Website by <a href="http://martinwolf.org">Martin Wolf</a></p>
     </div>
+
+    <script src="dist/js/scripts.min.js"></script>
 </body>
 </html>
 

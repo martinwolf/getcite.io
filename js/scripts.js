@@ -1,12 +1,12 @@
-var PROJECTNAME = PROJECTNAME || {};
+var CITE = CITE || {};
 
 $(function() {
 
-    PROJECTNAME = {
+    CITE = {
 
         init: function() {
 
-            this.handleMenu();
+            this.handleSlider();
 
             // if ( $('.content-slider').length ) {
             //     this.handleSlider();
@@ -14,12 +14,15 @@ $(function() {
 
         },
 
-        handleMenu: function() {
-            //menu
+        handleSlider: function() {
+            $('.js_slider').bxSlider({
+                mode: 'fade',
+                pager: false
+            });
         },
 
     };
 
-    PROJECTNAME.init();
+    CITE.init();
 
 });

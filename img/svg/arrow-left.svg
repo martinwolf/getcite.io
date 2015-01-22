@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="56px" viewBox="0 0 28 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Webcite" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-270.000000, -1079.000000)" fill="#E6B059">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(0.000000, 732.000000)">
+                <g id="Gallery" transform="translate(270.000000, 230.000000)" sketch:type="MSShapeGroup">
+                    <path d="M27.718,144.309 L1.721,117.307 C1.536,117.12 1.283,117 1,117 C0.447,117 0,117.447 0,118 C0,118.27 0.109,118.512 0.282,118.691 L25.611,145 L0.279,171.307 C0.109,171.489 0,171.731 0,172 C0,172.553 0.447,173 1,173 C1.283,173 1.536,172.881 1.718,172.691 L27.721,145.693 C27.891,145.512 28,145.27 28,145 C28,144.731 27.891,144.488 27.718,144.309 Z" id="Shape" transform="translate(14.000000, 145.000000) scale(-1, 1) translate(-14.000000, -145.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
