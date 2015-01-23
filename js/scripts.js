@@ -23,7 +23,7 @@ $(function() {
             });
 
             twttr.ready(function (twttr) {
-                twttr.events.bind('loaded', function (event) {
+                twttr.events.bind('rendered', function (event) {
                     previewSliderElem.removeClass('is-invis');
                     previewSlider.redrawSlider();
                 });

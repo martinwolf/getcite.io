@@ -16,6 +16,10 @@
     }
 }
 
+.slider__items {
+    transition: opacity .3s ease-in-out;
+}
+
 .slider__tweet {
     display: inline-block;
 }
