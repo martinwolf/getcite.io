@@ -4,6 +4,10 @@
 
 .logo {
     margin-bottom: 35px;
+
+    @include breakpoint(bp2) {
+        margin: 0 auto 50px;
+    }
 }
 
 .section__headline--intro {

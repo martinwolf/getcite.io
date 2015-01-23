@@ -4,6 +4,10 @@
 
 .slider {
     position: relative;
+
+    @include breakpoint(bp2) {
+        padding: 0;
+    }
 }
 
 .slider__img {
@@ -20,14 +24,28 @@
     transform: translateY(-50%);
     width: 28px;
     height: 56px;
+
+    @include breakpoint(bp2) {
+        width: 16px;
+        height: 32px;
+        background-size: cover;
+    }
 }
 
 .bx-prev {
     left: 0;
     background-image: url('data:image/svg+xml;utf8,<svg width="28" height="56" viewBox="0 0 28 56" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><desc>Created with Sketch.</desc><g fill="none" fill-rule="evenodd"><g fill="#E6B059"><g><g><path d="M.282 27.31L26.28.306C26.463.12 26.716 0 27 0c.553 0 1 .447 1 1 0 .27-.11.512-.282.69L2.388 28l25.333 26.307c.17.182.28.424.28.693 0 .553-.447 1-1 1-.283 0-.536-.12-.718-.31L.28 28.694C.11 28.513 0 28.27 0 28c0-.27.11-.512.282-.69z"/></g></g></g></g></svg>');
+
+    @include breakpoint(bp2) {
+        left: -18px;
+    }
 }
 
 .bx-next {
     right: 0;
     background-image: url('data:image/svg+xml;utf8,<svg width="28" height="56" viewBox="0 0 28 56" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><desc>Created with Sketch.</desc><g fill="none" fill-rule="evenodd"><g fill="#E6B059"><g><g><path d="M27.718 27.31L1.72.306C1.537.12 1.284 0 1 0 .447 0 0 .447 0 1c0 .27.11.512.282.69L25.612 28 .278 54.307C.11 54.49 0 54.73 0 55c0 .553.447 1 1 1 .283 0 .536-.12.718-.31L27.72 28.694c.17-.18.28-.423.28-.693 0-.27-.11-.512-.282-.69z"/></g></g></g></g></svg>');
+
+    @include breakpoint(bp2) {
+        right: -18px;
+    }
 }
