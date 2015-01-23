@@ -35,7 +35,7 @@ gulp.task('js', function() {
         .pipe(addsrc('./js/_libs/*.js'))
         .pipe(order([
                 'js/_libs/jquery-2.1.3.js',
-                'js/_libs/jquery.bxslider.js',
+                'js/_libs/owl.carousel.js',
                 'js/scripts.js'
             ], { base: './' }))
         .pipe(concat('scripts.min.js'))

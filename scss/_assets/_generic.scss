@@ -17,6 +17,11 @@ img {
     height: auto;
 }
 
-.is-invis {
+blockquote.twitter-tweet {
     opacity: 0;
+}
+
+.twitter-tweet-rendered {
+    position: relative !important;
+    right: -2px;
 }

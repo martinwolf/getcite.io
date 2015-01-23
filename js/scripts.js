@@ -6,7 +6,8 @@ $(function() {
 
         init: function() {
 
-            this.handleSlider();
+            //this.handleSlider();
+            this.handleOwl();
 
             // if ( $('.content-slider').length ) {
             //     this.handleSlider();
@@ -20,6 +21,8 @@ $(function() {
             previewSlider = previewSliderElem.bxSlider({
                 mode: 'fade',
                 pager: false,
+                useCSS: false,
+                video: true
             });
 
             twttr.ready(function (twttr) {
@@ -29,6 +32,16 @@ $(function() {
                 });
             });
         },
+
+        handleOwl: function() {
+            $('#preview-slider').owlCarousel({
+                items: 1,
+                margin: 20,
+                loop: true,
+                dots: false,
+                nav: true
+            });
+        }
 
     };
 
