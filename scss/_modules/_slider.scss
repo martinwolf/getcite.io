@@ -2,12 +2,22 @@
  * Slider
  */
 
+.bx-wrapper {
+    position: relative;
+    *zoom: 1;
+}
+
 .slider {
     position: relative;
+    text-align: center;
 
     @include breakpoint(bp2) {
         padding: 0;
     }
+}
+
+.slider__tweet {
+    display: inline-block;
 }
 
 .slider__img {

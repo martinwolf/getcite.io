@@ -1,5 +1,5 @@
 /**
- * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * BxSlider v4.1.3 - Fully loaded, responsive content slider
  * http://bxslider.com
  *
  * Copyright 2014, Steven Wanderski - http://stevenwanderski.com - http://bxcreative.com
@@ -91,7 +91,7 @@
 
 		if(this.length == 0) return this;
 
-		// support mutltiple elements
+		// support multiple elements
 		if(this.length > 1){
 			this.each(function(){$(this).bxSlider(options)});
 			return this;
@@ -106,7 +106,7 @@
 		/**
 		 * Makes slideshow responsive
 		 */
-		// first get the original window dimens (thanks alot IE)
+		// first get the original window dimens (thanks a lot IE)
 		var windowWidth = $(window).width();
 		var windowHeight = $(window).height();
 
@@ -184,7 +184,7 @@
 		var setup = function(){
 			// wrap el in a wrapper
 			el.wrap('<div class="' + slider.settings.wrapperClass + '"><div class="bx-viewport"></div></div>');
-			// store a namspace reference to .bx-viewport
+			// store a namespace reference to .bx-viewport
 			slider.viewport = el.parent();
 			// add a loading div to display while images are loading
 			slider.loader = $('<div class="bx-loading" />');
@@ -192,8 +192,8 @@
 			// set el to a massive width, to hold any needed slides
 			// also strip any margin and padding from el
 			el.css({
-				width: slider.settings.mode == 'horizontal' ? (slider.children.length * 100 + 215) + '%' : 'auto',
-				position: 'relative'
+				width: slider.settings.mode == 'horizontal' ? (slider.children.length * 1000 + 215) + '%' : 'auto',
+				position: 'absolute'
 			});
 			// if using CSS, add the easing property
 			if(slider.usingCSS && slider.settings.easing){
@@ -215,7 +215,7 @@
 			// make modification to the wrapper (.bx-wrapper)
 			if(!slider.settings.pager) {
 				slider.viewport.parent().css({
-				margin: '0 auto 0px'
+					margin: '0 auto 0px'
 				});
 			}
 			// apply css to all slider children
@@ -252,12 +252,12 @@
 			if (slider.settings.preloadImages == "all") preloadSelector = slider.children;
 			// only check for control addition if not in "ticker" mode
 			if(!slider.settings.ticker){
-				// if pager is requested, add it
-				if(slider.settings.pager) appendPager();
 				// if controls are requested, add them
 				if(slider.settings.controls) appendControls();
 				// if auto is true, and auto controls are requested, add them
 				if(slider.settings.auto && slider.settings.autoControls) appendControlsAuto();
+				// if pager is requested, add it
+				if(slider.settings.pager) appendPager();
 				// if any control option is requested, add the controls wrapper
 				if(slider.settings.controls || slider.settings.autoControls || slider.settings.pager) slider.viewport.after(slider.controls.el);
 			// if ticker mode, do not allow a pager
@@ -291,8 +291,8 @@
 			// if infinite loop, prepare additional slides
 			if(slider.settings.infiniteLoop && slider.settings.mode != 'fade' && !slider.settings.ticker){
 				var slice = slider.settings.mode == 'vertical' ? slider.settings.minSlides : slider.settings.maxSlides;
-				var sliceAppend = slider.children.slice(0, slice).clone().addClass('bx-clone');
-				var slicePrepend = slider.children.slice(-slice).clone().addClass('bx-clone');
+				var sliceAppend = slider.children.slice(0, slice).clone(true).addClass('bx-clone');
+				var slicePrepend = slider.children.slice(-slice).clone(true).addClass('bx-clone');
 				el.append(sliceAppend).prepend(slicePrepend);
 			}
 			// remove the loading DOM element
@@ -472,7 +472,7 @@
 		}
 
 		/**
-		 * Returns the number of indivual slides by which to shift the slider
+		 * Returns the number of individual slides by which to shift the slider
 		 */
 		var getMoveBy = function(){
 			// if moveSlides was set by the user and moveSlides is less than number of slides showing
@@ -508,7 +508,7 @@
 				var position = slider.children.eq(slider.active.index * getMoveBy()).position();
 				// check for last slide
 				if (slider.active.index == getPagerQty() - 1) slider.active.last = true;
-				// set the repective position
+				// set the respective position
 				if (position != undefined){
 					if (slider.settings.mode == 'horizontal') setPositionProperty(-position.left, 'reset', 0);
 					else if (slider.settings.mode == 'vertical') setPositionProperty(-position.top, 'reset', 0);
@@ -641,11 +641,11 @@
 			// bind click actions to the controls
 			slider.controls.next.bind('click', clickNextBind);
 			slider.controls.prev.bind('click', clickPrevBind);
-			// if nextSlector was supplied, populate it
+			// if nextSelector was supplied, populate it
 			if(slider.settings.nextSelector){
 				$(slider.settings.nextSelector).append(slider.controls.next);
 			}
-			// if prevSlector was supplied, populate it
+			// if prevSelector was supplied, populate it
 			if(slider.settings.prevSelector){
 				$(slider.settings.prevSelector).append(slider.controls.prev);
 			}
@@ -796,7 +796,7 @@
 		 * Performs needed actions after a slide transition
 		 */
 		var updateAfterSlideTransition = function(){
-			// if infinte loop is true
+			// if infinite loop is true
 			if(slider.settings.infiniteLoop){
 				var position = '';
 				// first slide
@@ -863,7 +863,7 @@
 		}
 
 		/**
-		 * Initialzes the auto process
+		 * Initializes the auto process
 		 */
 		var initAuto = function(){
 			// if autoDelay was supplied, launch the auto show using a setTimeout() call
@@ -879,7 +879,7 @@
 				el.hover(function(){
 					// if the auto show is currently playing (has an active interval)
 					if(slider.interval){
-						// stop the auto show and pass true agument which will prevent control update
+						// stop the auto show and pass true argument which will prevent control update
 						el.stopAuto(true);
 						// create a new autoPaused value which will be used by the relative "mouseout" event
 						slider.autoPaused = true;
@@ -887,7 +887,7 @@
 				}, function(){
 					// if the autoPaused value was created be the prior "mouseover" event
 					if(slider.autoPaused){
-						// start the auto show and pass true agument which will prevent control update
+						// start the auto show and pass true argument which will prevent control update
 						el.startAuto(true);
 						// reset the autoPaused value
 						slider.autoPaused = null;
@@ -897,7 +897,7 @@
 		}
 
 		/**
-		 * Initialzes the ticker process
+		 * Initializes the ticker process
 		 */
 		var initTicker = function(){
 			var startPosition = 0;
@@ -1140,7 +1140,7 @@
 			// check if last slide
 			slider.active.last = slider.active.index >= getPagerQty() - 1;
 			// update the pager with active class
-			if(slider.settings.pager) updatePagerActive(slider.active.index);
+			if(slider.settings.pager || slider.settings.pagerCustom) updatePagerActive(slider.active.index);
 			// // check for direction control update
 			if(slider.settings.controls) updateDirectionControls();
 			// if slider is set to mode: "fade"
@@ -1295,9 +1295,14 @@
 			if (slider.active.last) slider.active.index = getPagerQty() - 1;
 			// if the active index (page) no longer exists due to the resize, simply set the index as last
 			if (slider.active.index >= getPagerQty()) slider.active.last = true;
-			// if a pager is being displayed and a custom pager is not being used, update it
-			if(slider.settings.pager && !slider.settings.pagerCustom){
+			// if there is a default pager populate it
+			if(slider.settings.pager){
 				populatePager();
+				updatePagerActive(slider.active.index);
+			}
+			// if there is a custom pager activate it
+			if(slider.settings.pagerCustom){
+				appendPager();
 				updatePagerActive(slider.active.index);
 			}
 		}
@@ -1318,7 +1323,7 @@
 			if(slider.controls.el) slider.controls.el.remove();
 			if(slider.controls.next) slider.controls.next.remove();
 			if(slider.controls.prev) slider.controls.prev.remove();
-			if(slider.pagerEl && slider.settings.controls) slider.pagerEl.remove();
+			if(slider.pagerEl && slider.settings.controls && !slider.settings.pagerCustom) slider.pagerEl.remove();
 			$('.bx-caption', this).remove();
 			if(slider.controls.autoEl) slider.controls.autoEl.remove();
 			clearInterval(slider.interval);

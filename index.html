@@ -39,20 +39,21 @@
         </h2>
 
         <div class="wrap slider slider--preview">
-            <ul class="js_slider">
+            <ul class="is-invis" id="preview-slider">
                 <li>
-                    <img
-                        class="slider__img"
-                        srcset="dist/img/tweet-01.png 429w, dist/img/tweet-01@2x.png 858w"
-                        width="429" height="343"
-                        alt="Tweet with cite image attached">
+                    <div class="slider__tweet">
+                        <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p>Creative! But not a logo. RT <a href="https://twitter.com/verge">@verge</a>: New Sonos logo design pulses like a speaker when scrolled <a href="http://t.co/pCiRRtvLA3">http://t.co/pCiRRtvLA3</a> <a href="http://t.co/dLXBSa4TMi">pic.twitter.com/dLXBSa4TMi</a></p>&mdash; Benedikt Lehnert (@blehnert) <a href="https://twitter.com/blehnert/status/558563864582049792">January 23, 2015</a></blockquote>
+                    </div>
                 </li>
                 <li>
-                    <img
-                        class="slider__img"
-                        srcset="dist/img/tweet-01.png 429w, dist/img/tweet-01@2x.png 858w"
-                        width="429" height="343"
-                        alt="Tweet with cite image attached">
+                    <div class="slider__tweet">
+                        <blockquote class="twitter-tweet" lang="en"><p>How big is <a href="https://twitter.com/hashtag/mobile?src=hash">#mobile</a> for <a href="https://twitter.com/hashtag/ecommerce?src=hash">#ecommerce</a>? Just 1/3 of sales... via 140k <a href="https://twitter.com/Shopify">@Shopify</a> clients: <a href="http://t.co/lt18BFgiBC">http://t.co/lt18BFgiBC</a> <a href="http://t.co/BdZmKhsYYW">pic.twitter.com/BdZmKhsYYW</a></p>&mdash; Catherine Juon (@cjuon) <a href="https://twitter.com/cjuon/status/558613122341429249">January 23, 2015</a></blockquote>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider__tweet">
+                        <blockquote class="twitter-tweet" lang="en"><p>The new <a href="https://twitter.com/hashtag/Sonos?src=hash">#Sonos</a> logo sound wave is an absolutely brilliant design. Scroll to experience... &#10;&#10;<a href="http://t.co/mIcfrhgl5S">http://t.co/mIcfrhgl5S</a> <a href="http://t.co/7MoP2eOxi3">pic.twitter.com/7MoP2eOxi3</a></p>&mdash; Josh Hemsley (@joshhemsley) <a href="https://twitter.com/joshhemsley/status/558476708014092290">January 23, 2015</a></blockquote>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -65,7 +66,7 @@
         </h2>
 
         <div class="wrap slider slider--howto">
-            <ul class="js_slider">
+            <ul class="jjs_slider">
                 <li>
                     <img src="" alt="">
                 </li>
@@ -82,6 +83,24 @@
         <p class="outro-information">Website by <a href="http://martinwolf.org">Martin Wolf</a></p>
     </div>
 
+    <script>
+        window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
     <script src="dist/js/scripts.min.js"></script>
 </body>
 </html>

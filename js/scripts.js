@@ -15,9 +15,18 @@ $(function() {
         },
 
         handleSlider: function() {
-            $('.js_slider').bxSlider({
+            previewSliderElem = $('#preview-slider');
+
+            previewSlider = previewSliderElem.bxSlider({
                 mode: 'fade',
-                pager: false
+                pager: false,
+            });
+
+            twttr.ready(function (twttr) {
+                twttr.events.bind('loaded', function (event) {
+                    previewSliderElem.removeClass('is-invis');
+                    previewSlider.redrawSlider();
+                });
             });
         },
 
@@ -26,3 +35,4 @@ $(function() {
     CITE.init();
 
 });
+
