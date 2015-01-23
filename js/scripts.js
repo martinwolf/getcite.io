@@ -6,8 +6,7 @@ $(function() {
 
         init: function() {
 
-            //this.handleSlider();
-            this.handleOwl();
+            this.handleSlider();
 
             // if ( $('.content-slider').length ) {
             //     this.handleSlider();
@@ -16,24 +15,6 @@ $(function() {
         },
 
         handleSlider: function() {
-            previewSliderElem = $('#preview-slider');
-
-            previewSlider = previewSliderElem.bxSlider({
-                mode: 'fade',
-                pager: false,
-                useCSS: false,
-                video: true
-            });
-
-            twttr.ready(function (twttr) {
-                twttr.events.bind('rendered', function (event) {
-                    previewSliderElem.removeClass('is-invis');
-                    previewSlider.redrawSlider();
-                });
-            });
-        },
-
-        handleOwl: function() {
             $('#preview-slider').owlCarousel({
                 items: 1,
                 margin: 20,
