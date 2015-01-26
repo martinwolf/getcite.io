@@ -4,6 +4,7 @@
 
 body {
     font-family: 'Futura', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 .wrap {
@@ -15,6 +16,13 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
 }
 
 blockquote.twitter-tweet {
