@@ -23,6 +23,10 @@ p {
     color: #fff;
     font-size: 20px;
     text-align: center;
+
+    @include breakpoint(bp2) {
+        font-size: 18px;
+    }
 }
 
 blockquote.twitter-tweet {

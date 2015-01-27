@@ -23,12 +23,22 @@
     padding-top: 150px;
     padding-bottom: 135px;
     background-color: #4DBAA6;
+
+    @include breakpoint(bp2) {
+        padding-top: 120px;
+        padding-bottom: 110px;
+    }
 }
 
 .section--outro {
     padding-top: 200px;
     padding-bottom: 80px;
     background-color: $red;
+
+    @include breakpoint(bp2) {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
 }
 
 .section__headline {
@@ -40,6 +50,7 @@
     text-transform: uppercase;
 
     @include breakpoint(bp2) {
+        margin-bottom: 20px;
         font-size: 24px;
     }
 }

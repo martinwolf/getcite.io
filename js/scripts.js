@@ -22,6 +22,14 @@ $(function() {
                 dots: false,
                 nav: true
             });
+
+            $('#howto-slider').owlCarousel({
+                items: 1,
+                margin: 20,
+                loop: true,
+                dots: false,
+                nav: true
+            });
         }
 
     };

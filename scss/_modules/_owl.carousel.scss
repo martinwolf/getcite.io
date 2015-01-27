@@ -105,7 +105,7 @@
   position: relative;
   min-height: 1px;
   float: left;
-  -webkit-backface-visibility: hidden;
+  //-webkit-backface-visibility: hidden;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -114,9 +114,7 @@
   user-select: none;
 }
 .owl-carousel .owl-item img {
-  display: block;
-  width: 100%;
-  -webkit-transform-style: preserve-3d;
+  //-webkit-transform-style: preserve-3d;
 }
 .owl-carousel.owl-text-select-on .owl-item {
   -webkit-user-select: auto;
@@ -155,7 +153,7 @@
   transition: opacity 400ms ease;
 }
 .owl-carousel .owl-item img {
-  transform-style: preserve-3d;
+  //transform-style: preserve-3d;
 }
 
 /*

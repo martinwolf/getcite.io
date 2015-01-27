@@ -9,3 +9,45 @@
 .section__headline--howto > span {
     color: #F9EA33;
 }
+
+.howto {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 30px 0;
+
+    @include breakpoint(bp2) {
+        padding-top: 10px;
+    }
+}
+
+.howto__img {
+    margin-bottom: 80px;
+
+    @include breakpoint(bp2) {
+        margin-bottom: 40px;
+    }
+}
+
+.howto__img--3 {
+    margin-top: 50px;
+    margin-bottom: 134px;
+
+    @include breakpoint(bp2) {
+        margin-bottom: 94px;
+    }
+}
+
+.howto__headline {
+    color: #25685C;
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include breakpoint(bp2) {
+        font-size: 20px;
+    }
+}
+
+.howto__headline > span {
+    color: #FCEC51;
+}

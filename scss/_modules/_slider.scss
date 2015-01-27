@@ -16,7 +16,8 @@
 }
 
 .slider__img {
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .owl-carousel .owl-stage-outer {
@@ -28,11 +29,8 @@
 .owl-prev,
 .owl-next {
     @extend %text-hidden;
-
     position: absolute;
-    top: 50%;
     z-index: 100;
-    transform: translateY(-50%);
     width: 28px;
     height: 56px;
 
@@ -60,6 +58,12 @@
 }
 
 .slider--preview {
+    .owl-prev,
+    .owl-next {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
     .owl-prev {
         background-image: url('data:image/svg+xml;utf8,<svg width="28" height="56" viewBox="0 0 28 56" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><desc>Created with Sketch.</desc><g fill="none" fill-rule="evenodd"><g fill="#E6B059"><g><g><path d="M.282 27.31L26.28.306C26.463.12 26.716 0 27 0c.553 0 1 .447 1 1 0 .27-.11.512-.282.69L2.388 28l25.333 26.307c.17.182.28.424.28.693 0 .553-.447 1-1 1-.283 0-.536-.12-.718-.31L.28 28.694C.11 28.513 0 28.27 0 28c0-.27.11-.512.282-.69z"/></g></g></g></g></svg>');
     }
@@ -67,7 +71,21 @@
     .owl-next {
         background-image: url('data:image/svg+xml;utf8,<svg width="28" height="56" viewBox="0 0 28 56" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><desc>Created with Sketch.</desc><g fill="none" fill-rule="evenodd"><g fill="#E6B059"><g><g><path d="M27.718 27.31L1.72.306C1.537.12 1.284 0 1 0 .447 0 0 .447 0 1c0 .27.11.512.282.69L25.612 28 .278 54.307C.11 54.49 0 54.73 0 55c0 .553.447 1 1 1 .283 0 .536-.12.718-.31L27.72 28.694c.17-.18.28-.423.28-.693 0-.27-.11-.512-.282-.69z"/></g></g></g></g></svg>');
     }
+}
 
+.slider--howto {
+    .owl-prev,
+    .owl-next {
+        top: 25%;
+    }
+
+    .owl-prev {
+        background-image: url('data:image/svg+xml;utf8,<svg width="28" height="56" viewBox="0 0 28 56" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><desc>Created with Sketch.</desc><g fill="none" fill-rule="evenodd"><g fill="#F9EA33"><g><g><path d="M.282 27.31L26.28.306C26.463.12 26.716 0 27 0c.553 0 1 .447 1 1 0 .27-.11.512-.282.69L2.388 28l25.333 26.307c.17.182.28.424.28.693 0 .553-.447 1-1 1-.283 0-.536-.12-.718-.31L.28 28.694C.11 28.513 0 28.27 0 28c0-.27.11-.512.282-.69z"/></g></g></g></g></svg>');
+    }
+
+    .owl-next {
+        background-image: url('data:image/svg+xml;utf8,<svg width="28" height="56" viewBox="0 0 28 56" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><desc>Created with Sketch.</desc><g fill="none" fill-rule="evenodd"><g fill="#F9EA33"><g><g><path d="M27.718 27.31L1.72.306C1.537.12 1.284 0 1 0 .447 0 0 .447 0 1c0 .27.11.512.282.69L25.612 28 .278 54.307C.11 54.49 0 54.73 0 55c0 .553.447 1 1 1 .283 0 .536-.12.718-.31L27.72 28.694c.17-.18.28-.423.28-.693 0-.27-.11-.512-.282-.69z"/></g></g></g></g></svg>');
+    }
 }
 
 .owl-carousel {
@@ -110,6 +128,18 @@
 
         &::after {
             background: linear-gradient(to left, rgba(253,242,200,1) 0%,rgba(253,242,200,0) 100%);
+        }
+    }
+}
+
+.slider--howto {
+    .owl-carousel {
+        &::before {
+            background: linear-gradient(to right, rgba(77,186,166,1) 0%,rgba(77,186,166,0) 100%);
+        }
+
+        &::after {
+            background: linear-gradient(to left, rgba(77,186,166,1) 0%,rgba(77,186,166,0) 100%);
         }
     }
 }
