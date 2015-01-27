@@ -105,11 +105,11 @@
 .slider--preview {
     .owl-carousel {
         &::before {
-            background-image: linear-gradient(to left, transparent, #FDF2C8);
+            background: linear-gradient(to right, rgba(253,242,200,1) 0%,rgba(253,242,200,0) 100%);
         }
 
         &::after {
-            background-image: linear-gradient(to right, transparent, #FDF2C8);
+            background: linear-gradient(to left, rgba(253,242,200,1) 0%,rgba(253,242,200,0) 100%);
         }
     }
 }
