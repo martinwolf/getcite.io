@@ -12,19 +12,26 @@
 
 .outro-information {
     margin-top: 170px;
-    color: #D13031;
-    font-size: 15px;
-    text-align: center;
 
     @include breakpoint(bp2) {
         margin-top: 140px;
     }
 }
 
-.outro-information > a {
+.outro-information p {
+    color: #D13031;
+    font-size: 15px;
+    text-align: center;
+}
+
+.outro-information p:last-child {
+    margin-top: 40px;
+}
+
+.outro-information a {
     color: #D13031;
 }
 
-.outro-information > a:hover {
+.outro-information a:hover {
     text-decoration: none;
 }
