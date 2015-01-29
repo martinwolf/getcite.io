@@ -1,4 +1,4 @@
 getcite.io
 ===========
 
-All code remain copyright of Martin Wolf.
+All code remains copyright of Martin Wolf.
