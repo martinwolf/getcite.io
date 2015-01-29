@@ -12,14 +12,14 @@
     margin: 0 auto 50px;
     padding: 5px 5px 6px;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     text-align: center;
     border: 1px solid transparent;
     border-radius: 4px;
 
     @include breakpoint(bp2) {
-        width: 150px;
+        width: 160px;
     }
 }
 
@@ -48,16 +48,11 @@
 .button {
     display: inline-block;
     padding: 5px 10px 6px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     text-align: center;
     border: 1px solid transparent;
     border-radius: 4px;
-
-    @include breakpoint(bp2) {
-        padding-right: 5px;
-        padding-left: 5px;
-    }
 }
 
 .button:hover {
