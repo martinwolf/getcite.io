@@ -2,8 +2,12 @@
  * Forms
  */
 
+.form {
+    text-align: center;
+}
+
 .input {
-    display: block;
+    display: inline-block;
     width: 250px;
     margin: 0 auto 50px;
     padding: 5px 5px 6px;
@@ -38,6 +42,30 @@
 }
 
 .button {
-    position: absolute;
-    visibility: hidden;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:active {
+    position: relative;
+    top: 1px;
+}
+
+.button--preview {
+    color: #402475;
+    background-color: #8262C0;
+}
+
+.button--outro {
+    color: #D13031;
+    background-color: #FF8C8C;
 }
