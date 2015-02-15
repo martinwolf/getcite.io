@@ -33,6 +33,7 @@ gulp.task('js', function() {
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(addsrc('./js/_libs/*.js'))
+        .pipe(addsrc('./js/picturefill.min.js'))
         .pipe(order([
                 'js/_libs/jquery-2.1.3.js',
                 'js/_libs/owl.carousel.js',
