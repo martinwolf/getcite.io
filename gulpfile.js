@@ -13,8 +13,10 @@ var gulp         = require('gulp'),
     notify       = require('gulp-notify'),
     connect      = require('gulp-connect'),
     critical     = require("critical"),
-    htmlmin = require("gulp-htmlmin");
-
+    htmlmin = require("gulp-htmlmin"),
+    imagemin = require('gulp-imagemin'),
+    pngcrush = require('imagemin-pngcrush'),
+    jpegtran = require('imagemin-jpegtran');
 
 gulp.task('sass', function() {
     gulp.src('./scss/style.scss')
@@ -61,6 +63,14 @@ gulp.task("minify-html", ["critical"], function() {
     gulp.src('./index.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest("./dist/"));
+
+gulp.task('images', function () {
+    return gulp.src('./img/*')
+        .pipe(imagemin({
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngcrush(), jpegtran()]
+        }))
+    .pipe(gulp.dest('./dist/img'));
 });
 
 
