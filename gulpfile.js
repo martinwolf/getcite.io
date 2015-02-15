@@ -10,9 +10,10 @@ var gulp         = require('gulp'),
     order        = require('gulp-order'),
     watch        = require('gulp-watch'),
     livereload   = require('gulp-livereload'),
-    notify       = require('gulp-notify');
-    connect      = require('gulp-connect');
-    critical     = require("critical");
+    notify       = require('gulp-notify'),
+    connect      = require('gulp-connect'),
+    critical     = require("critical"),
+    htmlmin = require("gulp-htmlmin");
 
 
 gulp.task('sass', function() {
@@ -47,7 +48,6 @@ gulp.task('js', function() {
 
 gulp.task("critical", function() {
     critical.generateInline({
-
         base: './',
         src: 'index.html',
         width: 320,
@@ -55,7 +55,13 @@ gulp.task("critical", function() {
         htmlTarget: 'dist/index.html',
         minify: true,
     });
-})
+});
+
+gulp.task("minify-html", ["critical"], function() {
+    gulp.src('./index.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest("./dist/"));
+});
 
 
 gulp.task('connect', function() {
