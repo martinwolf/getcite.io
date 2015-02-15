@@ -12,6 +12,7 @@ var gulp         = require('gulp'),
     livereload   = require('gulp-livereload'),
     notify       = require('gulp-notify');
     connect      = require('gulp-connect');
+    critical     = require("critical");
 
 
 gulp.task('sass', function() {
@@ -43,6 +44,18 @@ gulp.task('js', function() {
         .pipe(uglify({mangle: false}))
         .pipe(gulp.dest('./dist/js'));
 });
+
+gulp.task("critical", function() {
+    critical.generateInline({
+
+        base: './',
+        src: 'index.html',
+        width: 320,
+        height: 480,
+        htmlTarget: 'dist/index.html',
+        minify: true,
+    });
+})
 
 
 gulp.task('connect', function() {
