@@ -10,9 +10,13 @@ var gulp         = require('gulp'),
     order        = require('gulp-order'),
     watch        = require('gulp-watch'),
     livereload   = require('gulp-livereload'),
-    notify       = require('gulp-notify');
-    connect      = require('gulp-connect');
-
+    notify       = require('gulp-notify'),
+    connect      = require('gulp-connect'),
+    critical     = require("critical"),
+    htmlmin = require("gulp-htmlmin"),
+    imagemin = require('gulp-imagemin'),
+    pngcrush = require('imagemin-pngcrush'),
+    jpegtran = require('imagemin-jpegtran');
 
 gulp.task('sass', function() {
     gulp.src('./scss/style.scss')
@@ -33,6 +37,7 @@ gulp.task('js', function() {
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(addsrc('./js/_libs/*.js'))
+        .pipe(addsrc('./js/picturefill.min.js'))
         .pipe(order([
                 'js/_libs/jquery-2.1.3.js',
                 'js/_libs/owl.carousel.js',
@@ -41,6 +46,31 @@ gulp.task('js', function() {
         .pipe(concat('scripts.min.js'))
         .pipe(uglify({mangle: false}))
         .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task("critical", function() {
+    critical.generateInline({
+        base: './',
+        src: 'index.html',
+        width: 320,
+        height: 480,
+        htmlTarget: 'dist/index.html',
+        minify: true,
+    });
+});
+
+gulp.task("minify-html", ["critical"], function() {
+    gulp.src('./index.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest("./dist/"));
+
+gulp.task('images', function () {
+    return gulp.src('./img/*')
+        .pipe(imagemin({
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngcrush(), jpegtran()]
+        }))
+    .pipe(gulp.dest('./dist/img'));
 });
 
 
