@@ -13,10 +13,10 @@ var gulp         = require('gulp'),
     notify       = require('gulp-notify'),
     connect      = require('gulp-connect'),
     critical     = require("critical"),
-    htmlmin = require("gulp-htmlmin"),
-    imagemin = require('gulp-imagemin'),
-    pngcrush = require('imagemin-pngcrush'),
-    jpegtran = require('imagemin-jpegtran');
+    htmlmin      = require("gulp-htmlmin"),
+    imagemin     = require('gulp-imagemin'),
+    pngcrush     = require('imagemin-pngcrush'),
+    jpegtran     = require('imagemin-jpegtran');
 
 gulp.task('sass', function() {
     gulp.src('./scss/style.scss')
