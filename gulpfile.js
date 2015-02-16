@@ -63,6 +63,7 @@ gulp.task("minify-html", ["critical"], function() {
     gulp.src('./index.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest("./dist/"));
+});
 
 gulp.task('images', function () {
     return gulp.src('./img/*')
