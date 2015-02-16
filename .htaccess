@@ -26,7 +26,7 @@
     ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByTime image/svg+xml "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
     ExpiresByType image/x-icon "access plus 1 month"
     ExpiresByType font/ttf "access plus 1 year"
