@@ -37,7 +37,6 @@ gulp.task('js', function() {
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(addsrc('./js/_libs/*.js'))
-        .pipe(addsrc('./js/picturefill.min.js'))
         .pipe(order([
                 'js/_libs/jquery-2.1.3.js',
                 'js/_libs/owl.carousel.js',
@@ -54,15 +53,16 @@ gulp.task("critical", function() {
         src: 'index.html',
         width: 320,
         height: 480,
-        htmlTarget: 'dist/index.html',
+        htmlTarget: 'index.critical.html',
         minify: true,
     });
 });
 
 gulp.task("minify-html", ["critical"], function() {
-    gulp.src('./index.html')
+    gulp.src('./index.critical.html')
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest("./dist/"));
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('images', function () {
