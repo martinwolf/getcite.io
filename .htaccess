@@ -1,3 +1,8 @@
+DirectoryIndex index.critical.min.html
+
+# CHARSET
+AddDefaultCharset utf-8
+
 # Deflate Compression by FileType
 <IfModule mod_deflate.c>
     Addtype font/truetype .ttf
